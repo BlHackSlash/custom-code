@@ -1,7 +1,4 @@
 FROM lscr.io/linuxserver/code-server:latest
 
-# Update repositories and install Julia
-RUN apt-get update && \
-    apt-get install -y julia && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# Download the official pre-compiled binaries, extract them, and link them to the system path
+RUN curl -fsSL https://install.julialang.org | sh
